@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lisan — Privacy Policy</title>
+<title>Qamous — Privacy Policy</title>
 <style>
   body { font-family: -apple-system, system-ui, "Segoe UI", sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
   h1 { font-size: 1.6em; }
@@ -13,56 +13,97 @@
 </style>
 </head>
 <body>
-<h1>Lisan — Privacy Policy</h1>
-<p class="updated">Last updated: 2026-08-09</p>
+<h1>Qamous — Privacy Policy</h1>
+<p class="updated">Last updated: 2026-09-27</p>
 
-<p>Lisan is a Classical Arabic learning app. Here's what actually happens to your data.</p>
+<p>Qamous is an Arabic learning app. It was previously called Lisan. Here is what
+actually happens to your data.</p>
 
 <h2>No account, no server</h2>
-<p>You don't sign up or log in, and there's no backend server storing anything about you.
-The app just runs on your phone. There's no account to collect anything into.</p>
+<p>You do not sign up or log in, and there is no backend server storing anything about
+you. The app runs on your phone. There is no account to collect anything into.</p>
 
 <h2>Your progress stays on your device</h2>
-<p>Words you know, your review history, streaks, settings, the languages you told the app
-you speak — all of it lives in the app's local storage (IndexedDB) on your phone and
-nowhere else. It's never sent anywhere. Uninstall the app or clear its data and it's
-gone for good, including for us.</p>
+<p>The words you know, your review history, streaks, settings, your search history, your
+notebook, and the languages you told the app you speak all live in the app's local
+storage on your phone and nowhere else. None of it is sent anywhere. Uninstall the app
+or clear its data and it is gone for good, including for us.</p>
 
-<h2>Optional AI translation, using your own API key</h2>
-<p>In Settings you can paste your own Anthropic API key to get AI-simplified translations
-of dictionary entries. If you turn this on:</p>
+<h2>The optional parts that use an API key of your own</h2>
+<p>Most of Qamous runs entirely on your device. Three things cannot, because they need a
+language model, and you turn them on by adding an API key of your own in Settings. You
+choose the provider: Google Gemini, Anthropic, or OpenRouter.</p>
 <ul>
-  <li>The key stays on your device.</li>
-  <li>The dictionary text you're looking up gets sent straight from your phone to
-  Anthropic's API using that key. It doesn't pass through us.</li>
-  <li>Skip this entirely and the app still works — you just won't get the AI-simplified
-  translations.</li>
+  <li><strong>Conversation.</strong> The text of the conversation you are having is sent
+  from your phone to the provider whose key you added, so that it can answer what you
+  actually said.</li>
+  <li><strong>Writing down what you said.</strong> If you use the Speak button, the audio
+  recording is sent to that same provider to be transcribed, and the text comes back to
+  your phone. The recording is not kept after that, and it is not sent anywhere else.</li>
+  <li><strong>AI help on a word or a passage.</strong> The text you asked about is sent,
+  and the answer comes back.</li>
 </ul>
-<p>What Anthropic does with that request is covered by
-<a href="https://www.anthropic.com/legal/privacy">their privacy policy</a>, not this one.</p>
+<p>In every case the key and the request go straight from your phone to that provider.
+They do not pass through us, because there is no server here for them to pass through.
+What the provider then does with the request is covered by their own privacy policy, not
+this one:
+<a href="https://policies.google.com/privacy">Google</a>,
+<a href="https://www.anthropic.com/legal/privacy">Anthropic</a>,
+<a href="https://openrouter.ai/privacy">OpenRouter</a>.</p>
+<p>Add no key and none of this happens. Everything else in the app still works.</p>
 
-<h2>Dictionary lookups</h2>
-<p>Looking up a word's classical dictionary entry pulls from
-<code>arabiclexicon.hawramani.com</code>, a public lexicon site, through the app so
-results can be cached on your phone for offline use later. The only thing sent is the
-Arabic root you're looking up — no personal info attached.</p>
-
-<h2>What Lisan doesn't do</h2>
+<h2>The microphone</h2>
+<p>The app can record you, in the pronunciation practice and in the conversation, and
+only when you press a record button. What happens to the recording depends on where you
+are:</p>
 <ul>
-  <li>No ads or ad tracking.</li>
-  <li>No analytics, no usage tracking.</li>
-  <li>Nothing to sell or share, because nothing leaves your device in the first place.</li>
-  <li>No access to your contacts, location, camera, or microphone.</li>
+  <li>In pronunciation practice it is compared with the model pronunciation on your phone
+  and played back to you. It does not leave the device.</li>
+  <li>In the conversation, and anywhere the app writes down what you said, it is sent to
+  the provider whose key you added, as described above. Without a key, that button is not
+  shown.</li>
+</ul>
+<p>Nothing is recorded in the background, and no recording is stored after you leave the
+screen.</p>
+
+<h2>Listening recordings</h2>
+<p>The spoken recordings in the Listening section are downloaded from the app's own
+static hosting when you open one, and cached on your phone so they work offline
+afterwards. Nothing about you is attached to that request.</p>
+
+<h2>What Qamous does not do</h2>
+<ul>
+  <li>No ads and no ad tracking.</li>
+  <li>No analytics and no usage tracking.</li>
+  <li>Nothing to sell or share, because nothing about you is collected in the first
+  place.</li>
+  <li>No access to your contacts, your location, your camera, or your photos.</li>
 </ul>
 
 <h2>Permissions</h2>
-<p>Just <code>INTERNET</code>, used only for the two optional things above: your own
-Anthropic key and dictionary lookups.</p>
+<ul>
+  <li><code>INTERNET</code>: downloading the listening recordings, and the optional
+  requests to the provider whose key you added.</li>
+  <li><code>RECORD_AUDIO</code>: the record buttons described above, and only while you
+  are pressing one.</li>
+  <li><code>FOREGROUND_SERVICE</code> and <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>:
+  so a recitation or a recording keeps playing when the screen goes off.</li>
+  <li><code>POST_NOTIFICATIONS</code>: the playback notification, with its play and skip
+  controls.</li>
+  <li><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code>: only to show the system dialog
+  asking for it, because some manufacturers stop playback even with a foreground service
+  running. It grants nothing by itself, and declining changes nothing except that
+  playback may be cut short.</li>
+</ul>
+
+<h2>Children</h2>
+<p>Qamous is not directed at children and collects nothing from anyone, of any age.</p>
 
 <h2>Changes to this policy</h2>
-<p>If anything here changes, this page gets updated and the date at the top moves.</p>
+<p>If anything here changes, this page is updated and the date at the top moves.</p>
 
 <h2>Contact</h2>
-<p>Questions about this policy: <a href="mailto:omarsalloum20031@gmail.com">omarsalloum20031@gmail.com</a></p>
+<p>Questions about this policy:
+<a href="mailto:omarsalloum20031@gmail.com">omarsalloum20031@gmail.com</a></p>
 </body>
 </html>
